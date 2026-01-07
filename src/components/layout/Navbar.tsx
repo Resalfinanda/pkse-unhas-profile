@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/PKSE UNHAS.png";
 
 const navLinks = [
   { name: "Beranda", path: "/" },
@@ -23,12 +24,19 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-display font-bold text-lg">P</span>
-            </div>
+            <img
+              src={logo}
+              alt="PKSE UNHAS"
+              className="w-10 h-10 rounded-xl object-cover"
+            />
             <div className="hidden sm:block">
-              <span className="font-display font-bold text-foreground">PKSE</span>
-              <span className="font-display font-bold text-primary"> UNHAS</span>
+              <span className="font-display font-bold text-foreground">
+                PKSE
+              </span>
+              <span className="font-display font-bold text-primary">
+                {" "}
+                UNHAS
+              </span>
             </div>
           </Link>
 

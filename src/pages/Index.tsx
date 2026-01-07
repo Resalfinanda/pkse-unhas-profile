@@ -6,26 +6,32 @@ import Footer from "@/components/layout/Footer";
 import SectionTitle from "@/components/ui/SectionTitle";
 import StatCard from "@/components/ui/StatCard";
 import ActivityCard from "@/components/ui/ActivityCard";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "@/assets/bg-hero.jpeg";
 
 const activities = [
   {
     title: "Bakti Sosial di Desa Terpencil",
-    description: "Kegiatan pengabdian masyarakat dengan memberikan bantuan pendidikan dan kesehatan di desa-desa terpencil Sulawesi Selatan.",
+    description:
+      "Kegiatan pengabdian masyarakat dengan memberikan bantuan pendidikan dan kesehatan di desa-desa terpencil Sulawesi Selatan.",
     date: "15 November 2024",
-    image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&h=400&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&h=400&fit=crop",
   },
   {
     title: "Seminar Kepemimpinan Mahasiswa",
-    description: "Workshop pengembangan soft skills dan kepemimpinan untuk seluruh anggota PKSE UNHAS bersama praktisi profesional.",
+    description:
+      "Workshop pengembangan soft skills dan kepemimpinan untuk seluruh anggota PKSE UNHAS bersama praktisi profesional.",
     date: "28 Oktober 2024",
-    image: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=600&h=400&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=600&h=400&fit=crop",
   },
   {
     title: "Gathering Alumni & Anggota Aktif",
-    description: "Acara silaturahmi tahunan yang mempertemukan alumni dengan anggota aktif untuk berbagi pengalaman dan networking.",
+    description:
+      "Acara silaturahmi tahunan yang mempertemukan alumni dengan anggota aktif untuk berbagi pengalaman dan networking.",
     date: "5 September 2024",
-    image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&h=400&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&h=400&fit=crop",
   },
 ];
 
@@ -58,19 +64,36 @@ const Index = () => {
             <br />
             <span className="text-aqua-200">UNHAS</span>
           </h1>
-          <p className="text-xl md:text-2xl text-primary-foreground/90 mb-4 max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: "0.1s" }}>
+          <p
+            className="text-xl md:text-2xl text-primary-foreground/90 mb-4 max-w-2xl mx-auto animate-slide-up"
+            style={{ animationDelay: "0.1s" }}
+          >
             "Bersama Berkarya, Bersama Berjaya"
           </p>
-          <p className="text-lg text-primary-foreground/70 mb-8 max-w-xl mx-auto animate-slide-up" style={{ animationDelay: "0.2s" }}>
-            Wadah pengembangan diri bagi penerima beasiswa Karya Salemba Empat di Universitas Hasanuddin
+          <p
+            className="text-lg text-primary-foreground/70 mb-8 max-w-xl mx-auto animate-slide-up"
+            style={{ animationDelay: "0.2s" }}
+          >
+            Wadah pengembangan diri bagi penerima beasiswa Karya Salemba Empat
+            di Universitas Hasanuddin
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up" style={{ animationDelay: "0.3s" }}>
-            <Button size="lg" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-semibold px-8">
+          <div
+            className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up"
+            style={{ animationDelay: "0.3s" }}
+          >
+            <Button
+              size="lg"
+              className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-semibold px-8"
+            >
               <Link to="/tentang" className="flex items-center gap-2">
                 Tentang Kami <ArrowRight className="w-5 h-5" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10 font-semibold px-8">
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10 font-semibold px-8"
+            >
               <Link to="/kontak">Hubungi Kami</Link>
             </Button>
           </div>
@@ -106,19 +129,28 @@ const Index = () => {
                 centered={false}
               />
               <div className="space-y-4 text-muted-foreground leading-relaxed">
+                <p>Assalamualaikum Warahmatullahi Wabarakatuh,</p>
                 <p>
-                  Assalamualaikum Warahmatullahi Wabarakatuh,
+                  Puji syukur kita panjatkan kepada Tuhan Yang Maha Esa atas
+                  segala rahmat dan karunia-Nya. Sebagai Ketua Umum PKSE UNHAS
+                  periode 2024/2025, saya menyambut dengan hangat seluruh
+                  pengunjung website resmi kami.
                 </p>
                 <p>
-                  Puji syukur kita panjatkan kepada Tuhan Yang Maha Esa atas segala rahmat dan karunia-Nya. Sebagai Ketua Umum PKSE UNHAS periode 2024/2025, saya menyambut dengan hangat seluruh pengunjung website resmi kami.
-                </p>
-                <p>
-                  Paguyuban KSE UNHAS merupakan wadah bagi kami para penerima beasiswa Karya Salemba Empat untuk terus berkembang, berkarya, dan memberikan kontribusi nyata kepada masyarakat. Mari bersama-sama kita wujudkan generasi yang berintegritas dan berdampak positif.
+                  Paguyuban KSE UNHAS merupakan wadah bagi kami para penerima
+                  beasiswa Karya Salemba Empat untuk terus berkembang, berkarya,
+                  dan memberikan kontribusi nyata kepada masyarakat. Mari
+                  bersama-sama kita wujudkan generasi yang berintegritas dan
+                  berdampak positif.
                 </p>
               </div>
               <div className="pt-4">
-                <p className="font-display font-semibold text-lg text-foreground">Muhammad Akbar</p>
-                <p className="text-primary font-medium">Ketua Umum PKSE UNHAS 2024/2025</p>
+                <p className="font-display font-semibold text-lg text-foreground">
+                  Muhammad Akbar
+                </p>
+                <p className="text-primary font-medium">
+                  Ketua Umum PKSE UNHAS 2024/2025
+                </p>
               </div>
             </div>
           </div>
@@ -129,10 +161,26 @@ const Index = () => {
       <section className="py-20 bg-background">
         <div className="section-container">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            <StatCard value="150+" label="Anggota Aktif" icon={<Users className="w-7 h-7" />} />
-            <StatCard value="500+" label="Total Alumni" icon={<Award className="w-7 h-7" />} />
-            <StatCard value="50+" label="Kegiatan/Tahun" icon={<BookOpen className="w-7 h-7" />} />
-            <StatCard value="15" label="Tahun Berdiri" icon={<Heart className="w-7 h-7" />} />
+            <StatCard
+              value="150+"
+              label="Anggota Aktif"
+              icon={<Users className="w-7 h-7" />}
+            />
+            <StatCard
+              value="500+"
+              label="Total Alumni"
+              icon={<Award className="w-7 h-7" />}
+            />
+            <StatCard
+              value="50+"
+              label="Kegiatan/Tahun"
+              icon={<BookOpen className="w-7 h-7" />}
+            />
+            <StatCard
+              value="15"
+              label="Tahun Berdiri"
+              icon={<Heart className="w-7 h-7" />}
+            />
           </div>
         </div>
       </section>
@@ -167,9 +215,13 @@ const Index = () => {
             Bergabung Bersama Kami
           </h2>
           <p className="text-xl text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
-            Jadilah bagian dari keluarga besar PKSE UNHAS dan kembangkan potensi terbaikmu bersama kami.
+            Jadilah bagian dari keluarga besar PKSE UNHAS dan kembangkan potensi
+            terbaikmu bersama kami.
           </p>
-          <Button size="lg" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-semibold px-8">
+          <Button
+            size="lg"
+            className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-semibold px-8"
+          >
             <Link to="/kontak" className="flex items-center gap-2">
               Hubungi Kami <ArrowRight className="w-5 h-5" />
             </Link>
