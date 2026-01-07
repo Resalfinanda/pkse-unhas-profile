@@ -7,6 +7,7 @@ const navLinks = [
   { name: "Beranda", path: "/" },
   { name: "Tentang Kami", path: "/tentang" },
   { name: "Anggota", path: "/anggota" },
+  { name: "Galeri", path: "/galeri" },
   { name: "Kontak", path: "/kontak" },
 ];
 
