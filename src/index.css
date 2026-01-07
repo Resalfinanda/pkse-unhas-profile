@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -56,10 +56,26 @@
     --aqua-900: 187 75% 18%;
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(187 85% 43%) 0%, hsl(195 90% 35%) 100%);
-    --gradient-hero: linear-gradient(180deg, hsl(187 85% 43% / 0.9) 0%, hsl(195 90% 25% / 0.95) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(187 40% 98%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(187 100% 25%) 0%, hsl(195 85% 20%) 100%);
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(187 85% 43%) 0%,
+      hsl(195 90% 35%) 100%
+    );
+    --gradient-hero: linear-gradient(
+      180deg,
+      hsl(187 85% 43% / 0.9) 0%,
+      hsl(195 90% 25% / 0.95) 70%
+    );
+    --gradient-card: linear-gradient(
+      145deg,
+      hsl(0 0% 100%) 0%,
+      hsl(187 40% 98%) 100%
+    );
+    --gradient-accent: linear-gradient(
+      135deg,
+      hsl(187 100% 25%) 0%,
+      hsl(195 85% 20%) 100%
+    );
 
     /* Shadows */
     --shadow-sm: 0 2px 8px hsl(187 85% 43% / 0.08);
@@ -129,11 +145,16 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Plus Jakarta Sans', sans-serif;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Plus Jakarta Sans", sans-serif;
     @apply font-bold tracking-tight;
   }
 }
@@ -183,38 +204,42 @@
   }
 
   @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 
   @keyframes slideUp {
-    from { 
+    from {
       opacity: 0;
       transform: translateY(30px);
     }
-    to { 
+    to {
       opacity: 1;
       transform: translateY(0);
     }
   }
 
   @keyframes slideInLeft {
-    from { 
+    from {
       opacity: 0;
       transform: translateX(-30px);
     }
-    to { 
+    to {
       opacity: 1;
       transform: translateX(0);
     }
   }
 
   @keyframes scaleIn {
-    from { 
+    from {
       opacity: 0;
       transform: scale(0.95);
     }
-    to { 
+    to {
       opacity: 1;
       transform: scale(1);
     }

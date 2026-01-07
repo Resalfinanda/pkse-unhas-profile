@@ -7,31 +7,39 @@ import SectionTitle from "@/components/ui/SectionTitle";
 import StatCard from "@/components/ui/StatCard";
 import ActivityCard from "@/components/ui/ActivityCard";
 import heroBg from "@/assets/bg-hero.jpeg";
+import fotoketum from "@/assets/tum.png";
+import mubes from "@/assets/mubes.jpeg";
+import craftinghope from "@/assets/craftinghope.jpeg";
+import funday from "@/assets/funday.jpeg";
 
 const activities = [
   {
-    title: "Bakti Sosial di Desa Terpencil",
+    title: "Crafting Hope Disabilitas 2025",
     description:
-      "Kegiatan pengabdian masyarakat dengan memberikan bantuan pendidikan dan kesehatan di desa-desa terpencil Sulawesi Selatan.",
-    date: "15 November 2024",
-    image:
-      "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&h=400&fit=crop",
+      "Kegiatan sosial yang bertujuan memberdayakan penyandang disabilitas melalui pelatihan keterampilan kerajinan tangan.",
+    date: "30 November 2025",
+    image: craftinghope,
+  },
+   {
+    title: "Pelantikan Pengurus baru 2025",
+    description:
+      "Kegiatan ini merupakan proses resmi pengukuhan pengurus baru PKSE UNHAS periode 2025/2026",
+    date: "20 September 2025",
+    image: heroBg,
   },
   {
-    title: "Seminar Kepemimpinan Mahasiswa",
+    title: "Musyawarah Besar PKSE UNHAS 2025",
     description:
-      "Workshop pengembangan soft skills dan kepemimpinan untuk seluruh anggota PKSE UNHAS bersama praktisi profesional.",
-    date: "28 Oktober 2024",
-    image:
-      "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=600&h=400&fit=crop",
+      "Kegiatan ini merupakan forum tertinggi dalam organisasi untuk mengevaluasi kinerja pengurus",
+    date: "30-31 Agustus 2025",
+    image: mubes,
   },
   {
-    title: "Gathering Alumni & Anggota Aktif",
+    title: "KSE Funday 2024",
     description:
       "Acara silaturahmi tahunan yang mempertemukan alumni dengan anggota aktif untuk berbagi pengalaman dan networking.",
-    date: "5 September 2024",
-    image:
-      "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&h=400&fit=crop",
+    date: "22 Agustus 2024",
+    image: funday,
   },
 ];
 
@@ -56,7 +64,7 @@ const Index = () => {
         <div className="relative z-10 section-container text-center text-primary-foreground py-32">
           <div className="animate-fade-in">
             <span className="inline-block px-4 py-2 rounded-full bg-primary-foreground/20 backdrop-blur-sm text-sm font-medium mb-6">
-              Kabinet Cahaya Harapan 2024/2025
+              Kabinet Cakrawala 2025/2026
             </span>
           </div>
           <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-slide-up">
@@ -114,7 +122,7 @@ const Index = () => {
             <div className="relative">
               <div className="aspect-square max-w-md mx-auto lg:mx-0 rounded-2xl overflow-hidden shadow-aqua-lg">
                 <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=600&fit=crop&crop=face"
+                  src={fotoketum}
                   alt="Ketua Umum PKSE UNHAS"
                   className="w-full h-full object-cover"
                 />
@@ -133,7 +141,7 @@ const Index = () => {
                 <p>
                   Puji syukur kita panjatkan kepada Tuhan Yang Maha Esa atas
                   segala rahmat dan karunia-Nya. Sebagai Ketua Umum PKSE UNHAS
-                  periode 2024/2025, saya menyambut dengan hangat seluruh
+                  periode 2025/2026, saya menyambut dengan hangat seluruh
                   pengunjung website resmi kami.
                 </p>
                 <p>
@@ -146,10 +154,10 @@ const Index = () => {
               </div>
               <div className="pt-4">
                 <p className="font-display font-semibold text-lg text-foreground">
-                  Muhammad Akbar
+                  Ode Abdul Nazib
                 </p>
                 <p className="text-primary font-medium">
-                  Ketua Umum PKSE UNHAS 2024/2025
+                  Ketua Umum PKSE UNHAS 2025/2026
                 </p>
               </div>
             </div>
@@ -162,22 +170,22 @@ const Index = () => {
         <div className="section-container">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             <StatCard
-              value="150+"
+              value="50+"
               label="Anggota Aktif"
               icon={<Users className="w-7 h-7" />}
             />
             <StatCard
-              value="500+"
+              value="100+"
               label="Total Alumni"
               icon={<Award className="w-7 h-7" />}
             />
             <StatCard
-              value="50+"
+              value="10+"
               label="Kegiatan/Tahun"
               icon={<BookOpen className="w-7 h-7" />}
             />
             <StatCard
-              value="15"
+              value="2016"
               label="Tahun Berdiri"
               icon={<Heart className="w-7 h-7" />}
             />
@@ -194,7 +202,7 @@ const Index = () => {
             description="Berbagai kegiatan yang telah kami laksanakan untuk pengembangan anggota dan kontribusi kepada masyarakat"
           />
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {activities.map((activity, index) => (
               <ActivityCard key={index} {...activity} />
             ))}

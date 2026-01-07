@@ -27,13 +27,13 @@ const Navbar = () => {
             <img
               src={logo}
               alt="PKSE UNHAS"
-              className="w-10 h-10 rounded-xl object-cover"
+              className="w-12 h-12 rounded-xl object-cover"
             />
             <div className="hidden sm:block">
-              <span className="font-display font-bold text-foreground">
+              <span className="font-display font-bold text-xl text-foreground">
                 PKSE
               </span>
-              <span className="font-display font-bold text-primary">
+              <span className="font-display font-bold text-xl text-primary">
                 {" "}
                 UNHAS
               </span>
