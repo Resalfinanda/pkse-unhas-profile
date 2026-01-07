@@ -137,7 +137,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-accent-foreground/10">
+        <div className="mt-8 pt-6 border-t border-accent-foreground/10">
           <p className="text-center text-accent-foreground/60 text-sm">
             © {new Date().getFullYear()} Paguyuban KSE UNHAS. All rights
             reserved.

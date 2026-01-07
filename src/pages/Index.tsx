@@ -20,7 +20,7 @@ const activities = [
     date: "30 November 2025",
     image: craftinghope,
   },
-   {
+  {
     title: "Pelantikan Pengurus baru 2025",
     description:
       "Kegiatan ini merupakan proses resmi pengukuhan pengurus baru PKSE UNHAS periode 2025/2026",
@@ -217,7 +217,7 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 md:py-28 bg-gradient-primary text-primary-foreground">
+      <section className="py-14 md:py-16 bg-gradient-primary text-primary-foreground">
         <div className="section-container text-center">
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
             Bergabung Bersama Kami
