@@ -6,40 +6,46 @@ import TimelineItem from "@/components/ui/TimelineItem";
 
 const historyTimeline = [
   {
-    year: "2009",
+    year: "2016",
     title: "Pendirian PKSE UNHAS",
     description:
-      "Paguyuban KSE UNHAS didirikan oleh sekelompok mahasiswa penerima beasiswa KSE dengan visi membangun komunitas yang solid dan berdampak.",
+      "Paguyuban Karya Salemba Empat Universitas Hasanuddin (PKSE UNHAS) resmi didirikan pada 13 Maret 2016 sebagai wadah pembinaan, pengembangan, dan solidaritas mahasiswa penerima Beasiswa KSE di Universitas Hasanuddin.",
   },
   {
-    year: "2012",
-    title: "Pengukuhan Organisasi Resmi",
+    year: "2017",
+    title: "Penguatan Struktur Organisasi",
     description:
-      "PKSE UNHAS resmi dikukuhkan sebagai organisasi kemahasiswaan di Universitas Hasanuddin dengan struktur kepengurusan yang lebih terorganisir.",
+      "PKSE UNHAS mulai membangun struktur kepengurusan yang lebih sistematis serta merumuskan arah gerak organisasi melalui program kerja yang terencana.",
   },
   {
-    year: "2015",
-    title: "Ekspansi Program Pengabdian",
+    year: "2019",
+    title: "Pengembangan Program Internal dan Eksternal",
     description:
-      "Dimulainya program pengabdian masyarakat rutin yang menjangkau berbagai daerah di Sulawesi Selatan.",
+      "Fokus pada peningkatan kapasitas anggota melalui kegiatan pengembangan diri, kepemimpinan, serta keterlibatan aktif dalam kegiatan sosial dan kemahasiswaan.",
   },
   {
-    year: "2018",
-    title: "Penghargaan Nasional",
+    year: "2020",
+    title: "Adaptasi di Masa Pandemi",
     description:
-      "PKSE UNHAS meraih penghargaan sebagai paguyuban KSE terbaik se-Indonesia dalam ajang pertemuan nasional KSE.",
+      "PKSE UNHAS beradaptasi dengan kondisi pandemi COVID-19 melalui pelaksanaan kegiatan berbasis daring serta penguatan solidaritas internal organisasi.",
   },
   {
-    year: "2021",
-    title: "Adaptasi Digital",
+    year: "2022",
+    title: "Pemulihan dan Ekspansi Kegiatan",
     description:
-      "Bertransformasi dengan mengadopsi platform digital untuk kegiatan dan manajemen organisasi di era pandemi.",
+      "Memasuki masa pascapandemi, PKSE UNHAS kembali menggiatkan kegiatan luring dan memperluas jangkauan program pengabdian serta kolaborasi.",
   },
   {
     year: "2024",
-    title: "Era Baru Kebangkitan",
+    title: "Transformasi dan Inovasi Organisasi",
     description:
-      "Kabinet Cahaya Harapan memulai babak baru dengan fokus pada inovasi, kolaborasi, dan dampak sosial yang lebih luas.",
+      "Organisasi mulai menaruh fokus pada inovasi, penguatan branding, serta optimalisasi media digital sebagai sarana komunikasi dan publikasi.",
+  },
+  {
+    year: "2025/2026",
+    title: "Kabinet Cakrawala",
+    description:
+      "Periode kepengurusan Kabinet Cakrawala mengusung semangat visi yang luas dan progresif, dengan fokus pada keberlanjutan organisasi, kolaborasi strategis, serta peningkatan dampak sosial PKSE UNHAS.",
   },
 ];
 
