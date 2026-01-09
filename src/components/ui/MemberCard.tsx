@@ -8,12 +8,8 @@ interface MemberCardProps {
 
 const MemberCard = ({ name, position, department, image, isLeader = false }: MemberCardProps) => {
   return (
-    <div className={`group text-center ${isLeader ? "scale-110" : ""}`}>
-      <div className={`relative mx-auto mb-4 overflow-hidden ${
-        isLeader 
-          ? "w-40 h-40 rounded-2xl ring-4 ring-primary shadow-aqua-lg" 
-          : "w-32 h-32 rounded-xl shadow-card"
-      }`}>
+    <div className={`group text-center `}>
+      <div className={`relative mx-auto mb-4 overflow-hidden w-32 h-32 rounded-xl shadow-card`}>
         <img
           src={image}
           alt={name}
