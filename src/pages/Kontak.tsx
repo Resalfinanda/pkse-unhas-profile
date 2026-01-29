@@ -1,5 +1,14 @@
 import { useState } from "react";
-import { Mail, Phone, MapPin, Send, Facebook, Instagram, Twitter, Youtube } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Send,
+  Facebook,
+  Instagram,
+  Twitter,
+  Youtube,
+} from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import SectionTitle from "@/components/ui/SectionTitle";
@@ -8,6 +17,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
+import { useContact } from "@/hooks/useContact";
 
 const socialLinks = [
   { name: "Instagram", icon: Instagram, url: "#", handle: "@pkse_unhas" },
@@ -17,6 +27,8 @@ const socialLinks = [
 ];
 
 const Kontak = () => {
+  const { submit, loading, success, error } = useContact();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -24,15 +36,19 @@ const Kontak = () => {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    await submit(formData);
     toast.success("Pesan terkirim!", {
-      description: "Terima kasih telah menghubungi kami. Kami akan segera merespons.",
+      description:
+        "Terima kasih telah menghubungi kami. Kami akan segera merespons.",
     });
     setFormData({ name: "", email: "", subject: "", message: "" });
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -47,7 +63,8 @@ const Kontak = () => {
             Hubungi Kami
           </h1>
           <p className="text-xl text-primary-foreground/80 max-w-2xl mx-auto">
-            Punya pertanyaan atau ingin berkolaborasi? Jangan ragu untuk menghubungi kami
+            Punya pertanyaan atau ingin berkolaborasi? Jangan ragu untuk
+            menghubungi kami
           </p>
         </div>
       </section>
@@ -70,11 +87,16 @@ const Kontak = () => {
                     <MapPin className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-display font-semibold text-foreground mb-1">Alamat</h4>
+                    <h4 className="font-display font-semibold text-foreground mb-1">
+                      Alamat
+                    </h4>
                     <p className="text-muted-foreground">
-                      Sekretariat PKSE UNHAS<br />
-                      Universitas Hasanuddin<br />
-                      Jl. Perintis Kemerdekaan KM. 10<br />
+                      Sekretariat PKSE UNHAS
+                      <br />
+                      Universitas Hasanuddin
+                      <br />
+                      Jl. Perintis Kemerdekaan KM. 10
+                      <br />
                       Tamalanrea, Makassar 90245
                     </p>
                   </div>
@@ -85,8 +107,13 @@ const Kontak = () => {
                     <Mail className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-display font-semibold text-foreground mb-1">Email</h4>
-                    <a href="mailto:pkse.unhas@gmail.com" className="text-primary hover:underline">
+                    <h4 className="font-display font-semibold text-foreground mb-1">
+                      Email
+                    </h4>
+                    <a
+                      href="mailto:pkse.unhas@gmail.com"
+                      className="text-primary hover:underline"
+                    >
                       pkse.unhas@gmail.com
                     </a>
                   </div>
@@ -97,8 +124,13 @@ const Kontak = () => {
                     <Phone className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-display font-semibold text-foreground mb-1">Telepon</h4>
-                    <a href="tel:+6281234567890" className="text-primary hover:underline">
+                    <h4 className="font-display font-semibold text-foreground mb-1">
+                      Telepon
+                    </h4>
+                    <a
+                      href="tel:+6281234567890"
+                      className="text-primary hover:underline"
+                    >
                       +62 812 3456 7890
                     </a>
                   </div>
@@ -188,9 +220,14 @@ const Kontak = () => {
                   />
                 </div>
 
-                <Button type="submit" size="lg" className="w-full font-semibold">
+                <Button
+                  type="submit"
+                  disabled={loading}
+                  size="lg"
+                  className="w-full font-semibold"
+                >
                   <Send className="w-5 h-5 mr-2" />
-                  Kirim Pesan
+                  {loading ? "Mengirim..." : "Kirim Pesan"}
                 </Button>
               </form>
             </div>
@@ -240,7 +277,9 @@ const Kontak = () => {
               },
             ].map((faq, index) => (
               <div key={index} className="bg-card rounded-xl p-6 shadow-card">
-                <h4 className="font-display font-semibold text-lg text-foreground mb-2">{faq.q}</h4>
+                <h4 className="font-display font-semibold text-lg text-foreground mb-2">
+                  {faq.q}
+                </h4>
                 <p className="text-muted-foreground">{faq.a}</p>
               </div>
             ))}

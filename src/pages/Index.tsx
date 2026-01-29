@@ -11,39 +11,11 @@ import fotoketum from "@/assets/tum.png";
 import mubes from "@/assets/mubes.jpeg";
 import craftinghope from "@/assets/craftinghope.jpeg";
 import funday from "@/assets/funday.jpeg";
-
-const activities = [
-  {
-    title: "Crafting Hope Disabilitas 2025",
-    description:
-      "Kegiatan sosial yang bertujuan memberdayakan penyandang disabilitas melalui pelatihan keterampilan kerajinan tangan.",
-    date: "30 November 2025",
-    image: craftinghope,
-  },
-  {
-    title: "Pelantikan Pengurus baru 2025",
-    description:
-      "Kegiatan ini merupakan proses resmi pengukuhan pengurus baru PKSE UNHAS periode 2025/2026",
-    date: "20 September 2025",
-    image: heroBg,
-  },
-  {
-    title: "Musyawarah Besar PKSE UNHAS 2025",
-    description:
-      "Kegiatan ini merupakan forum tertinggi dalam organisasi untuk mengevaluasi kinerja pengurus",
-    date: "30-31 Agustus 2025",
-    image: mubes,
-  },
-  {
-    title: "KSE Funday 2024",
-    description:
-      "Acara silaturahmi tahunan yang mempertemukan alumni dengan anggota aktif untuk berbagi pengalaman dan networking.",
-    date: "22 Agustus 2024",
-    image: funday,
-  },
-];
+import { useActivities } from "@/hooks/useActivities";
 
 const Index = () => {
+  const { data: activities, loading, error } = useActivities();
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -203,14 +175,32 @@ const Index = () => {
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {activities.map((activity, index) => (
-              <ActivityCard key={index} {...activity} />
+            {activities.map((activity) => (
+              <ActivityCard
+                key={activity.id}
+                title={activity.title}
+                description={activity.description}
+                date={activity.activity_date}
+                image={activity.image_url}
+              />
             ))}
           </div>
 
           <div className="text-center mt-12">
-            <Button variant="outline" size="lg" className="font-semibold">
-              Lihat Semua Kegiatan <ArrowRight className="w-5 h-5 ml-2" />
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="font-semibold"
+            >
+              <a
+                href="https://www.instagram.com/pkse.unhas/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                Kepoin Kegiatan Lainnya <ArrowRight className="w-5 h-5 ml-2" />
+              </a>
             </Button>
           </div>
         </div>

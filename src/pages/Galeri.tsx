@@ -4,30 +4,40 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import SectionTitle from "@/components/ui/SectionTitle";
 import { Button } from "@/components/ui/button";
+import { useGallery } from "@/hooks/useGallery";
+import { useGalleryCategories } from "@/hooks/useCategories";
 
-const categories = ["Semua", "Bakti Sosial", "Seminar", "Gathering", "Pelatihan", "Lomba"];
-
-const galleryItems = [
-  { id: 1, title: "Bakti Sosial Desa Bonto", category: "Bakti Sosial", year: "2024", image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&h=400&fit=crop" },
-  { id: 2, title: "Seminar Kepemimpinan", category: "Seminar", year: "2024", image: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=600&h=400&fit=crop" },
-  { id: 3, title: "Gathering Alumni 2024", category: "Gathering", year: "2024", image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&h=400&fit=crop" },
-  { id: 4, title: "Pelatihan Public Speaking", category: "Pelatihan", year: "2024", image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop" },
-  { id: 5, title: "Lomba Debat Nasional", category: "Lomba", year: "2023", image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&h=400&fit=crop" },
-  { id: 6, title: "Baksos Anak Yatim", category: "Bakti Sosial", year: "2023", image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&h=400&fit=crop" },
-  { id: 7, title: "Workshop Design Thinking", category: "Pelatihan", year: "2023", image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&h=400&fit=crop" },
-  { id: 8, title: "Seminar Karir Alumni", category: "Seminar", year: "2023", image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&h=400&fit=crop" },
-  { id: 9, title: "Gathering Anggota Baru", category: "Gathering", year: "2023", image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=600&h=400&fit=crop" },
-  { id: 10, title: "Baksos Pendidikan", category: "Bakti Sosial", year: "2024", image: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=600&h=400&fit=crop" },
-  { id: 11, title: "Pelatihan Excel", category: "Pelatihan", year: "2024", image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop" },
-  { id: 12, title: "Lomba Essay", category: "Lomba", year: "2024", image: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?w=600&h=400&fit=crop" },
-];
 
 const Galeri = () => {
+
+  const { categories } = useGalleryCategories();
+  const { data: galleryItems, loading, error } = useGallery();
   const [activeCategory, setActiveCategory] = useState("Semua");
 
-  const filteredItems = activeCategory === "Semua" 
-    ? galleryItems 
-    : galleryItems.filter(item => item.category === activeCategory);
+  const filteredItems =
+    activeCategory === "Semua"
+      ? galleryItems
+      : galleryItems.filter((item) => item.category === activeCategory);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-background">
+        <Navbar />
+        <p className="text-center py-32">Loading galeri...</p>
+        <Footer />
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen bg-background">
+        <Navbar />
+        <p className="text-center py-32 text-red-500">{error}</p>
+        <Footer />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background">
@@ -75,7 +85,7 @@ const Galeri = () => {
               >
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
-                    src={item.image}
+                    src={item.image_url}
                     alt={item.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
@@ -88,7 +98,9 @@ const Galeri = () => {
                   <h3 className="font-display font-semibold text-primary-foreground text-lg">
                     {item.title}
                   </h3>
-                  <p className="text-primary-foreground/70 text-sm">{item.year}</p>
+                  <p className="text-primary-foreground/70 text-sm">
+                    {item.year}
+                  </p>
                 </div>
               </div>
             ))}

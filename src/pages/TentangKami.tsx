@@ -105,7 +105,7 @@ const TentangKami = () => {
 
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&h=500&fit=crop"
+                src="https://iuplxvbhembdabhvrznb.supabase.co/storage/v1/object/public/Images/gallery/Paguyuban/WhatsApp%20Image%202026-01-30%20at%2002.04.30%20(1).jpeg"
                 alt="PKSE UNHAS Team"
                 className="rounded-2xl shadow-aqua-lg w-full"
               />
