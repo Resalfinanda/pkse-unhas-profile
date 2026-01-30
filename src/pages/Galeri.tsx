@@ -6,10 +6,9 @@ import SectionTitle from "@/components/ui/SectionTitle";
 import { Button } from "@/components/ui/button";
 import { useGallery } from "@/hooks/useGallery";
 import { useGalleryCategories } from "@/hooks/useCategories";
-
+import LoadingSpinner from "@/components/ui/Loading";
 
 const Galeri = () => {
-
   const { categories } = useGalleryCategories();
   const { data: galleryItems, loading, error } = useGallery();
   const [activeCategory, setActiveCategory] = useState("Semua");
@@ -23,7 +22,9 @@ const Galeri = () => {
     return (
       <div className="min-h-screen bg-background">
         <Navbar />
-        <p className="text-center py-32">Loading galeri...</p>
+        <div className="w-[100dvw] flex justify-center h-[50dvh] items-center">
+          <LoadingSpinner />
+        </div>
         <Footer />
       </div>
     );

@@ -9,6 +9,7 @@ import { useExecutives } from "@/hooks/useExecutives";
 import { useMembers } from "@/hooks/useMember";
 import { useDivisions } from "@/hooks/useDivisions";
 import { useAlumni } from "@/hooks/useAlumni";
+import LoadingSpinner from "@/components/ui/Loading";
 
 const Anggota = () => {
   const { data: executives, loading: execLoading } = useExecutives();
@@ -19,7 +20,15 @@ const Anggota = () => {
   const isLoading = execLoading || memberLoading || divLoading || alumniLoading;
 
   if (isLoading) {
-    return <p className="text-center py-20">Loading data anggota...</p>;
+    return (
+      <div className="min-h-screen bg-background">
+        <Navbar />
+        <div className="w-[100dvw] flex justify-center h-[50dvh] items-center">
+          <LoadingSpinner />
+        </div>
+        <Footer />
+      </div>
+    );
   }
 
   return (
